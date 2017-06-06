@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('string-similarity',{
+        category: 'function',
+        color: '#E6E0F8',
+        defaults: {
+            name: {value:""},
+            mode: {value: "compare"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "function.png",
+        label: function() {
+            return this.name||"string-similarity";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="string-similarity">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+           <label for="node-input-mode"><i class="fa fa-font"></i> Mode</label>
+           <select type="text" id="node-input-mode" style="display: inline-block; width: 70%;">
+               <option value="compare">Compare Two Strings</option>
+               <option value="bestMatch">Find Best Match</option>
+           </select>
+       </div>
+</script>
+
+<script type="text/x-red" data-help-name="string-similarity">
+    <p>A simple node that compares the similarity of two strings. There are two modes, comparison mode and best match mode. Select the desired mode from the node dialog panel.</p>
+    <p>
+        <b>Compare</b>
+        <ul>
+            <li><code>msg.stringOne</code></li>
+            <li><code>msg.stringTwo</code></li>
+        </ul>
+
+        <b>Best Match</b>
+        <ul>
+            <li><code>msg.mainString</code> - A string to compare</li>
+            <li><code>msg.targetStrings</code> - An array of strings to compare against.</li>
+        </ul>
+    </p>
+    <p>In the compare mode, the similarity score is returned on <code>msg.payload</code>. In best match mode, the array of ratings and the best match is returned on <code>msg.payload</code>.</p>
+</script>

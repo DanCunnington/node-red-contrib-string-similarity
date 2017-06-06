@@ -2,7 +2,8 @@
   "name": "node-red-contrib-string-similarity",
   "version": "0.0.1",
   "description": "A node for comparing the similarity of two strings, based on the aceakash/string-similarity npm module.",
-  "dependencies": { 
+  "dependencies": {
+    "string-similarity": "^1.2.0"
   },
   "repository": {
     "type": "git",
@@ -14,14 +15,15 @@
     "string",
     "similarity"
   ],
-  "contributors": [ {
+  "contributors": [
+    {
       "name": "Dan Cunnington",
       "email": "dancunnington@uk.ibm.com"
     }
   ],
   "node-red": {
     "nodes": {
-      "string-similarity":"string-similarity/v1.js"
+      "string-similarity": "string-similarity/v1.js"
     }
   },
   "engines": {
